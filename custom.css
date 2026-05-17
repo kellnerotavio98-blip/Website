@@ -1,0 +1,194 @@
+logoBox {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:8px 18px;
+    border:1px solid var(--border);
+    background:var(--paper2);
+    transition:border-color .2s"
+}
+
+logoBox:hover{
+    border-color: var(--red);
+}
+
+logoBoxWrapper{
+    max-width: 50%;
+    display: grid;
+    grid-column: 1;
+    grid-row: 2;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+}
+
+/* ============ MODAL DE CONTATO ============ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 18, 8, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 1100;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.modal-overlay.ativo {
+  display: flex;
+  animation: modalFade .25s ease;
+}
+
+@keyframes modalFade {
+  from { opacity: 0; transform: scale(0.98); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.modal-box {
+  background: var(--paper-contrast);
+  border: 1px solid var(--ink);
+  padding: 56px 48px 48px;
+  max-width: 560px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--ink);
+  font-size: 28px;
+  cursor: pointer;
+  transition: color .2s;
+  font-family: var(--mono);
+  line-height: 1;
+}
+.modal-close:hover { color: var(--red); }
+
+.modal-eyebrow {
+  font-size: 1.1rem;
+  color: var(--red);
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.modal-box h3 {
+  font-family: var(--serif);
+  font-size: 3.6rem;
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -1.5px;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.modal-desc {
+  font-size: 1.3rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+#formContato {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+#formContato label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-lbl {
+  font-size: 1rem;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+#formContato input,
+#formContato textarea {
+  background: var(--paper3);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  padding: 14px 16px;
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  transition: border-color .2s;
+  width: 100%;
+}
+
+#formContato input:focus,
+#formContato textarea:focus {
+  outline: none;
+  border-color: var(--red);
+}
+
+#formContato textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+body.modal-aberto { overflow: hidden; }
+
+@media (max-width: 640px) {
+  .modal-box { padding: 40px 24px 32px; }
+  .modal-box h3 { font-size: 2.8rem; }
+}
+
+/* Transição suave entre temas */
+body,
+nav,
+footer,
+.attack-card,
+.svc-card,
+.modal-box,
+#formContato input,
+#formContato textarea,
+.btn {
+  transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+}
+
+[data-theme="dark"] nav {
+  background: rgba(36, 25, 14, 0.92);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .2s, color .2s, transform .2s;
+  padding: 0;
+}
+
+.theme-toggle:hover {
+  border-color: var(--red);
+  color: var(--red);
+  transform: rotate(15deg);
+}
+
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: block; }
+
+[data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }

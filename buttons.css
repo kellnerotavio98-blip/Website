@@ -1,0 +1,59 @@
+.btn {
+    padding: 17px 38px;
+    font-family: var(--mono);
+    font-size: 1.22rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all .25s;
+}
+
+.seeAttack {
+    background: var(--red);
+    border: 1px solid var(--red);
+    /* border-color: var(--ink); */
+    color: var(--paper);
+}
+
+.seeAttack:hover {
+    background: var(--white);
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    animation: zoom-in-zoom-out 1s;
+}
+
+.seeServices {
+    background: var(--ink);
+    border: 1px solid var(--ink);
+    color: var(--paper);
+}
+
+.seeServices:hover {
+    color: var(--ink);
+    background: var(--paper2);
+    border: 1px solid var(--ink);
+    animation: zoom-in-zoom-out 1s;
+}
+
+.reqService{
+    background: var(--red);
+    color: var(--paper);
+}
+
+.reqService:hover {
+    background: var(--red);
+    color: var(--paper);
+    animation: zoom-in-zoom-out 1s;
+}
+
+
+@keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform: scale(1.1, 1.1);
+    }
+}
